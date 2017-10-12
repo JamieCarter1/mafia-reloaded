@@ -33,7 +33,7 @@ class MafiaGame:
         self.wssock.send(self.detectives, "#TYPE:Detective")
         self._wait_acknowledge(self.detectives, "#LOADED_DETECTIVE_JS")
         self.wssock.send(self.mafias, "#MAFIA_NAMES:" + ",".join([str(m) for m in self.mafias]))
-        self.wssock.send(self.detectives, "#DETECTIVE_NAMES:" + ",".join([str(d) for d in self.detectives]))
+        self.wssock.send(self.detectives, "#DETECTIVE_NAMES:"[str(d) for d in self.detectives]))
 
     def _wait_acknowledge(self, cl_list, message):
         looking_for = {(cl, message) for cl in cl_list}
